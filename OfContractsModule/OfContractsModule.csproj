@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <ModuleId>ofsf_catalog</ModuleId>
+    <ModulePriority>120</ModulePriority>
+    <ModuleNotes>OF_SF 区服的可选内容目录</ModuleNotes>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ModHost Condition="'$(ModHost)' == ''">$(MSBuildThisFileDirectory)../libs/mod.dll</ModHost>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mod"><HintPath>$(ModHost)</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Import Project="../build/HotUpdate.targets" />
+</Project>
